@@ -114,6 +114,20 @@ func Test_formatAddress(t *testing.T) {
 			},
 			want: "10.0.0.2:1234",
 		},
+		{
+			args: args{
+				addr: "1.2.3.4",
+				port: 1234,
+			},
+			want: "1.2.3.4:1234",
+		},
+		{
+			args: args{
+				addr: "web.node.consul",
+				port: 1234,
+			},
+			want: "web.node.consul:1234",
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
