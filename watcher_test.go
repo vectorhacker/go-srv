@@ -62,9 +62,6 @@ func Test_watcher_Next(t *testing.T) {
 			},
 			want: []*naming.Update{
 				&naming.Update{
-					Addr: "10.0.0.1:1222",
-				},
-				&naming.Update{
 					Op:   naming.Delete,
 					Addr: "10.0.0.3:2344",
 				},

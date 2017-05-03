@@ -62,6 +62,7 @@ func (w *watcher) start() {
 					}
 
 					w.existing = newExisting
+					
 				}()
 			case <-w.stopChan:
 				return
@@ -85,10 +86,6 @@ func (w *watcher) Next() ([]*naming.Update, error) {
 			if _, ok := w.existing[addr]; !ok {
 				updates = append(updates, &naming.Update{
 					Op:   naming.Delete,
-					Addr: formatAddress(addr, port),
-				})
-			} else {
-				updates = append(updates, &naming.Update{
 					Addr: formatAddress(addr, port),
 				})
 			}
